@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <head>
+
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<title>Hello, world!</title>
+	<title>MyJoy - You found me!</title>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="icons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="icons/mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="icons/mstile-310x310.png" />
+	<meta name="theme-color" content="#ed0085" />
+
 	<!-- include three.js library -->
 	<script src='js/three.js'></script>
 	<!-- include jsartookit -->
@@ -12,18 +35,26 @@
 	<script src="threex/threex-artoolkitcontext.js"></script>
 	<script src="threex/threex-arbasecontrols.js"></script>
 	<script src="threex/threex-armarkercontrols.js"></script>
+
+	<style>
+		.myjoy-logo {
+            position: fixed;
+            right: 0.25em;
+            bottom: 0.25em;
+            width: 50px;
+            z-index: 1001;
+        }
+	</style>
+
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-<video  preload="auto" id="video" loop="true" crossorigin webkit-playsinline playsinline controls style="display:none">
+<video preload="auto" id="video" loop="true" crossorigin webkit-playsinline playsinline controls style="display:none">
 	<source src="video/sintel.MP4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 </video>
-		
-<!-- 
-  Example created by Lee Stemkoski: https://github.com/stemkoski
-  Based on the AR.js library and examples created by Jerome Etienne: https://github.com/jeromeetienne/AR.js/
--->
+
+<img class="myjoy-logo" src="images/myjoy-logo.png">
 
 <script>
 
