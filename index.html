@@ -41,7 +41,7 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-<video preload="auto" id="video" loop="true" crossorigin webkit-playsinline playsinline controls src="video/new-vid.MP4" style="display:none">
+<video preload="auto" id="video" loop="true" crossorigin webkit-playsinline playsinline controls style="display:none">
 </video>
 
 <img class="myjoy-logo" src="images/myjoy-logo.png">
@@ -190,7 +190,7 @@ window.addEventListener("click", () => {
 
 function loadAssets() {
 	var loader = new THREE.FileLoader();
-
+	loader.setResponseType('blob');
 	//load a text file and output the result to the console
 	loader.load(
 		// resource URL
@@ -198,16 +198,13 @@ function loadAssets() {
 
 		// onLoad callback
 		function ( data ) {
-			// output the text to the console
-			console.log( data );
+			vid.src = URL.createObjectURL(data);
+			var ldr = document.getElementById('loader');
+			ldr.className += ' ' + 'hide';
 		},
 
 		// onProgress callback
 		function ( xhr ) {
-			if((xhr.loaded / xhr.total * 100) > 60) {
-				var ldr = document.getElementById('loader');
-				ldr.className += ' ' + 'hide';
-			}
 			console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
 		},
 
