@@ -191,6 +191,7 @@ window.addEventListener("click", () => {
 function loadAssets() {
 	var loader = new THREE.FileLoader();
 	loader.setResponseType('blob');
+	loader.setMimeType('video/mp4');
 	//load a text file and output the result to the console
 	loader.load(
 		// resource URL
