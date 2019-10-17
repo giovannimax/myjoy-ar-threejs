@@ -36,6 +36,7 @@
 	<script src="threex/threex-arbasecontrols.js"></script>
 	<script src="threex/threex-armarkercontrols.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap" rel="stylesheet">
 
 </head>
 
@@ -44,10 +45,15 @@
 <video preload="auto" id="video" loop="true" crossorigin webkit-playsinline playsinline controls style="display:none">
 </video>
 
-<img class="myjoy-logo" src="images/myjoy-logo.png">
+<img id="myjoy-logo" class="myjoy-logo" src="images/myjoy-logo-new.png">
 <div class="loader" id="loader">
-	<img class="myjoy-logo-inner" src="images/myjoy-logo.png">
+	<img class="myjoy-logo-inner" src="images/myjoy-logo-new.png">
+	<h4>Tap the screen after camera loads.</h4>
 	<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
+
+<div class="footer-helper" id="footer-helper">
+	<span>Having trouble seeing the video?</span><a id="alt-link" href="https://myjoy.ph/prkblly-alt">Click Me</a>
 </div>
 
 <script>
@@ -183,8 +189,8 @@ function animate()
 	render();
 }
 
-
-window.addEventListener("click", () => {
+var canv = document.querySelector('canvas');
+canv.addEventListener("click", () => {
 	vid.play();
 });
 
@@ -195,13 +201,14 @@ function loadAssets() {
 	//load a text file and output the result to the console
 	loader.load(
 		// resource URL
-		'video/new-vid-2.MP4',
+		'video/belly.MP4',
 
 		// onLoad callback
 		function ( data ) {
 			vid.src = URL.createObjectURL(data);
 			var ldr = document.getElementById('loader');
 			ldr.className += ' ' + 'hide';
+			startHelperTimer();
 		},
 
 		// onProgress callback
@@ -215,6 +222,15 @@ function loadAssets() {
 			console.error( 'An error happened' );
 		}
 	);
+}
+
+function startHelperTimer() {
+	setTimeout(() => {
+		var ftr = document.getElementById('footer-helper');
+		ftr.className += ' ' + 'show';
+		var lg = document.getElementById('myjoy-logo');
+		lg.className += ' ' + 'show';
+	}, 5000);
 }
 
 </script>

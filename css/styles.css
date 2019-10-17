@@ -1,10 +1,21 @@
+html * {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
 .myjoy-logo {
     position: fixed;
     right: 0.25em;
     bottom: 0.25em;
     width: 50px;
     z-index: 1001;
+    transition:all .5s ease;
 }
+
+.myjoy-logo.show {
+  bottom: 2.75em;
+}
+
 .loader {
     position: fixed;
     top: 0px;
@@ -84,4 +95,31 @@
 
 canvas {
     display: block; /* fix necessary to remove space at bottom of canvas */
+}
+
+.footer-helper {
+  width: 100%;
+  padding: 0.5em;
+  text-align: center;
+  z-index: 1010;
+  background-color: #ed0085;
+  position: fixed;
+  bottom: -3em;
+  left: 0px;
+  transition:all .5s ease;
+}
+
+.footer-helper.show {
+  bottom: 0px;
+}
+
+.footer-helper span {
+  font-weight: 600;
+  font-size: 1em;
+  padding: 0.25em;
+}
+
+.footer-helper a {
+  font-weight: 700;
+  font-size: 1em;
 }
